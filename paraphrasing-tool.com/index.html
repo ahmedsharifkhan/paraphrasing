@@ -1,0 +1,454 @@
+<!DOCTYPE html><html class="no-js" lang="en" dir="ltr">
+<!-- Mirrored from paraphrasing-tool.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Jun 2021 21:29:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8"/>
+<script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>var __ez=__ez||{};__ez.stms=Date.now();__ez.evt={};__ez.script={};__ez.ck=__ez.ck||{};__ez.template={};__ez.template.isOrig=true;__ez.queue=(function(){var count=0,incr=0,items=[],timeDelayFired=false,hpItems=[],lpItems=[],allowLoad=true;var obj={func:function(name,funcName,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError){var self=this;this.name=name;this.funcName=funcName;this.parameters=parameters===null?null:(parameters instanceof Array)?parameters:[parameters];this.isBlock=isBlock;this.blockedBy=blockedBy;this.deleteWhenComplete=deleteWhenComplete;this.isError=false;this.isComplete=false;this.isInitialized=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){log("... func = "+name);self.isInitialized=true;self.isComplete=true;log("... func.apply: "+name);var funcs=self.funcName.split('.');var func=null;if(funcs.length>3){}else if(funcs.length===3){func=window[funcs[0]][funcs[1]][funcs[2]];}else if(funcs.length===2){func=window[funcs[0]][funcs[1]];}else{func=window[self.funcName];}
+if(typeof func!=='undefined'&&func!==null){func.apply(null,this.parameters);}
+if(self.deleteWhenComplete===true)delete items[name];if(self.isBlock===true){log("----- F'D: "+self.name);processAll();}}},file:function(name,path,isBlock,blockedBy,async,defer,proceedIfError){var self=this;this.name=name;this.path=path;this.async=async;this.defer=defer;this.isBlock=isBlock;this.blockedBy=blockedBy;this.isInitialized=false;this.isError=false;this.isComplete=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){self.isInitialized=true;log("... file = "+name);var scr=document.createElement('script');scr.src=path;if(async===true)scr.async=true;else if(defer===true)scr.defer=true;scr.onerror=function(){log("----- ERR'D: "+self.name);self.isError=true;if(self.isBlock===true){processAll();}};scr.onreadystatechange=scr.onload=function(){var state=scr.readyState;log("----- F'D: "+self.name);if((!state||/loaded|complete/.test(state))){self.isComplete=true;if(self.isBlock===true){processAll();}}};document.getElementsByTagName('head')[0].appendChild(scr);}},fileLoaded:function(name,isComplete){this.name=name;this.path="";this.async=false;this.defer=false;this.isBlock=false;this.blockedBy=[];this.isInitialized=true;this.isError=false;this.isComplete=isComplete;this.proceedIfError=false;this.isTimeDelay=false;this.process=function(){};}};function init(){window.addEventListener("load",function(){setTimeout(function(){timeDelayFired=true;log('TDELAY -----');processAll();},5000);},false);}
+function addFile(name,path,isBlock,blockedBy,async,defer,proceedIfError,priority){var item=new obj.file(name,path,isBlock,blockedBy,async,defer,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function setallowLoad(settobool){allowLoad=settobool}
+function addFunc(name,func,parameters,isBlock,blockedBy,autoInc,deleteWhenComplete,proceedIfError,priority){if(autoInc===true)name=name+"_"+incr++;var item=new obj.func(name,func,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFile(name,path){var item=new obj.file(name,path,false,[],false,false,true);item.isTimeDelay=true;log(name+' ... '+' FILE! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFunc(name,func,parameters){var item=new obj.func(name,func,parameters,false,[],true,true);item.isTimeDelay=true;log(name+' ... '+' FUNCTION! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function checkIfBlocked(item){if(isBlocked(item)===true||allowLoad==false)return;item.process();}
+function isBlocked(item){if(item.isTimeDelay===true&&timeDelayFired===false){log(item.name+" blocked = TIME DELAY!");return true;}
+if(item.blockedBy instanceof Array){for(var i=0;i<item.blockedBy.length;i++){var block=item.blockedBy[i];if(items.hasOwnProperty(block)===false){log(item.name+" blocked = "+block);return true;}else if(item.proceedIfError===true&&items[block].isError===true){return false;}else if(items[block].isComplete===false){log(item.name+" blocked = "+block);return true;}}}
+return false;}
+function markLoaded(filename){if(!filename||0===filename.length){return;}
+if(filename in items){var item=items[filename];if(item.isComplete===true){log(item.name+' '+filename+': error loaded duplicate')}else{item.isComplete=true;item.isInitialized=true;}}else{items[filename]=new obj.fileLoaded(filename,true);}
+log("markLoaded dummyfile: "+items[filename].name);}
+function logWhatsBlocked(){for(var i in items){if(items.hasOwnProperty(i)===false)continue;var item=items[i];isBlocked(item)}}
+function log(msg){var href=window.location.href;var reg=new RegExp('[?&]ezq=([^&#]*)','i');var string=reg.exec(href);var res=string?string[1]:null;if(res==="1")console.debug(msg);}
+function processAll(){count++;if(count>200)return;log("let's go");processItems(hpItems);processItems(lpItems);}
+function processItems(list){for(var i in list){if(list.hasOwnProperty(i)===false)continue;var item=list[i];if(item.isComplete===true||isBlocked(item)||item.isInitialized===true||item.isError===true){if(item.isError===true){log(item.name+': error')}else if(item.isComplete===true){log(item.name+': complete already')}else if(item.isInitialized===true){log(item.name+': initialized already')}}else{item.process();}}}
+init();return{addFile:addFile,addDelayFile:addTimeDelayFile,addFunc:addFunc,addDelayFunc:addTimeDelayFunc,items:items,processAll:processAll,setallowLoad:setallowLoad,markLoaded:markLoaded,logWhatsBlocked:logWhatsBlocked,};})();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent("on"+t,n):delete e["on"+t]};__ez.script.add=function(e){var t=document.createElement("script");t.src=e,t.async=!0,t.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(t)};__ez.dot={};__ez.queue.addFile('detroitchicago/boise.js', 'detroitchicago/boiseb5e6.js?gcb=195-1&amp;cb=1', false, [], true, false, true, false);__ez.queue.addFile('detroitchicago/memphis.js', 'detroitchicago/memphis75e4.js?gcb=195-1&amp;cb=8', false, [], true, false, true, false);__ez.queue.addFile('detroitchicago/minneapolis.js', 'detroitchicago/minneapolisf1d6.js?gcb=195-1&amp;cb=3', false, [], true, false, true, false);__ez.queue.addFile('detroitchicago/rochester.js', 'detroitchicago/rochester01c3.js?gcb=195-1&amp;cb=12', false, ['/detroitchicago/memphis.js','/detroitchicago/minneapolis.js'], true, false, true, false);__ez.vep=(function(){var pixels=[],pxURL="detroitchicago/grapefruit.gif";function AddPixel(vID,pixelData){if(__ez.dot.isDefined(vID)&&__ez.dot.isValid(pixelData)){pixels.push({type:'video',video_impression_id:vID,domain_id:__ez.dot.getDID(),t_epoch:__ez.dot.getEpoch(0),data:__ez.dot.dataToStr(pixelData)});}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender"){return;}
+if(__ez.dot.isDefined(pixels)&&pixels.length>0){while(pixels.length>0){var j=5;if(j>pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(__ez.template.isOrig===true?1:0)+"&v="+btoa(JSON.stringify(pushPixels));__ez.dot.Fire(pixelURL);}}
+pixels=[];}
+return{Add:AddPixel,Fire:Fire};})();</script><script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>__ez.pel=(function(){var pixels=[],pxURL="porpoiseant/army.gif";function AddAndFirePixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0);Fire();}
+function AddAndFireOrigPixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0,true);Fire();}
+function GetCurrentPixels(){return pixels;}
+function AddPixel(adSlot,pixelData,revenue,est_revenue,bid_floor_filled,bid_floor_prev,stat_source_id,isOrig){if(!__ez.dot.isDefined(adSlot)||__ez.dot.isAnyDefined(adSlot.getSlotElementId,adSlot.ElementId)==false){return;}
+var ad_position_id=parseInt(__ez.dot.getTargeting(adSlot,'ap'));var impId=__ez.dot.getSlotIID(adSlot),adUnit=__ez.dot.getAdUnit(adSlot,isOrig);var compId=parseInt(__ez.dot.getTargeting(adSlot,"compid"));var lineItemId=0;var creativeId=0;var ezimData=getEzimData(adSlot);if(typeof ezimData=='object'){if(ezimData.creative_id!==undefined){creativeId=ezimData.creative_id;}
+if(ezimData.line_item_id!==undefined){lineItemId=ezimData.line_item_id;}}
+if(__ez.dot.isDefined(impId,adUnit)&&__ez.dot.isValid(pixelData)){pixels.push({type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),revenue:revenue,est_revenue:est_revenue,ad_position:ad_position_id,ad_size:"",bid_floor_filled:bid_floor_filled,bid_floor_prev:bid_floor_prev,stat_source_id:stat_source_id,country_code:__ez.dot.getCC(),pageview_id:__ez.dot.getPageviewId(),comp_id:compId,line_item_id:lineItemId,creative_id:creativeId,data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig,});}}
+function AddPixelById(impFullId,pixelData,isOrig){var vals=impFullId.split('index.html');if(__ez.dot.isDefined(impFullId)&&vals.length===3&&__ez.dot.isValid(pixelData)){var adUnit=vals[0],impId=vals[2];pixels.push({type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),pageview_id:__ez.dot.getPageviewId(),data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig});}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender")return;if(__ez.dot.isDefined(pixels)&&pixels.length>0){var allPixels=[pixels.filter(function(pixel){return pixel.is_orig}),pixels.filter(function(pixel){return!pixel.is_orig})];allPixels.forEach(function(pixels){while(pixels.length>0){var isOrig=pixels[0].is_orig||false;var j=5;if(j>pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(isOrig===true?1:0)+"&sts="+btoa(JSON.stringify(pushPixels));if(typeof window.isAmp!=='undefined'&&isAmp&&typeof window._ezaq!=='undefined'&&_ezaq.hasOwnProperty("domain_id")){pixelURL+="&visit_uuid="+_ezaq['visit_uuid'];}
+__ez.dot.Fire(pixelURL);}})}
+pixels=[];}
+function getEzimData(adSlot){if(typeof _ezim_d=="undefined"){return false}
+var adUnitName=__ez.dot.getAdUnitPath(adSlot).split('index.html').pop();if(typeof _ezim_d==='object'&&_ezim_d.hasOwnProperty(adUnitName)){return _ezim_d[adUnitName];}
+for(var ezimKey in _ezim_d){if(ezimKey.split('index.html').pop()===adUnitName){return _ezim_d[ezimKey];}}
+return false;}
+return{Add:AddPixel,AddAndFire:AddAndFirePixel,AddAndFireOrig:AddAndFireOrigPixel,AddById:AddPixelById,Fire:Fire,GetPixels:GetCurrentPixels,};})();__ez.queue.addFile('detroitchicago/raleigh.js', 'detroitchicago/raleigh5af5.js?gcb=195-1&amp;cb=5', false, [], true, false, true, false);__ez.queue.addFile('detroitchicago/tampa.js', 'detroitchicago/tampaf1d6.js?gcb=195-1&amp;cb=3', false, [], true, false, true, false);</script>
+<script data-ezscrex="false" data-cfasync="false">(function(){if("function"===typeof window.CustomEvent)return!1;window.CustomEvent=function(c,a){a=a||{bubbles:!1,cancelable:!1,detail:null};var b=document.createEvent("CustomEvent");b.initCustomEvent(c,a.bubbles,a.cancelable,a.detail);return b}})();</script><script data-ezscrex="false" data-cfasync="false">__ez.queue.addFile('detroitchicago/tulsa.js', 'detroitchicago/tulsa5af5.js?gcb=195-1&amp;cb=5', false, [], true, false, true, false);</script>
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Paraphrasing Tool</title>
+    <meta name="keywords" content="text,article,essay,paraphrase,reword,rewrite,fast,tool,free,spin,intelligent"/>
+    <meta name="description" content="Paraphrase intelligently and quickly. No sign up required!"/>
+    <link rel="stylesheet" href="../cdn-0.paraphrasing-tool.com/css/foundation_5.css"/>
+    <link rel="stylesheet" href="../cdn-0.paraphrasing-tool.com/css/fontawesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../cdn-0.paraphrasing-tool.com/css/app_5.css"/>
+    <link rel="stylesheet" href="../use.typekit.net/lkj8lhx.css"/>
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16"/>
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96"/>
+
+    <script>if (window.top !== window.self) window.top.location.replace(window.self.location.href);</script>
+    <script src="../ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.js"></script>
+    <!-- Ezoic Ad Testing Code-->
+    
+
+        <script src="../newassets.hcaptcha.com/captcha/v1/e5fe6c7/hcaptcha.js" async="" defer=""></script>
+
+    <link rel='canonical' href='index.html' />
+<script type="text/javascript">var ezouid = "1";</script><base ><script type='text/javascript'>
+var ezoTemplate = 'old_site_gc';
+if(typeof ezouid == 'undefined')
+{
+    var ezouid = 'none';
+}
+var ezoFormfactor = '1';
+var ezo_elements_to_check = Array();
+</script>
+
+<!-- START EZHEAD -->
+<script data-ezscrex="false" type='text/javascript'>
+var soc_app_id = '0';
+var did = 25784;
+var ezdomain = 'paraphrasing-tool.com';
+var ezoicSearchable = 1;
+</script>
+<!--{jquery}-->
+<!-- END EZHEAD -->
+
+<script data-ezscrex="false" type="text/javascript" data-cfasync="false">var _ezaq = {"ad_cache_level":0,"ad_lazyload_version":0,"ad_load_version":0,"city":"Dhaka","country":"BD","days_since_last_visit":-1,"domain_id":25784,"domain_test_group":20210306,"engaged_time_visit":0,"ezcache_level":0,"ezcache_skip_code":0,"form_factor_id":1,"framework_id":1,"is_return_visitor":false,"is_sitespeed":0,"last_page_load":"","last_pageview_id":"","lt_cache_level":0,"metro_code":0,"page_ad_positions":"","page_view_count":0,"page_view_id":"5d6d1b31-b869-4d24-450f-19ac405dbd4b","position_selection_id":0,"postal_code":"1000","pv_event_count":0,"response_size_orig":24256,"response_time_orig":905,"serverid":"3.0.97.223:29109","state":"13","t_epoch":1624310946,"template_id":126,"time_on_site_visit":0,"url":"https://paraphrasing-tool.com/","user_id":0,"weather_precipitation":0,"weather_summary":"","weather_temperature":0,"word_count":1099,"worst_bad_word_level":0};var _ezExtraQueries = "&ez_orig=1";</script>
+<script data-ezscrex='false' data-pagespeed-no-defer data-cfasync='false'>
+function create_ezolpl(pvID, rv) {
+    var d = new Date();
+    d.setTime(d.getTime() + (365*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    __ez.ck.setByCat("ezux_lpl_25784=" + new Date().getTime() + "|" + pvID + "|" + rv + "; " + expires, 3);
+}
+function attach_ezolpl(pvID, rv) {
+    if (document.readyState === "complete") {
+        create_ezolpl(pvID, rv);
+    }
+    if(window.attachEvent) {
+        window.attachEvent("onload", create_ezolpl, pvID, rv);
+    } else {
+        if(window.onload) {
+            var curronload = window.onload;
+            var newonload = function(evt) {
+                curronload(evt);
+                create_ezolpl(pvID, rv);
+            };
+            window.onload = newonload;
+        } else {
+            window.onload = create_ezolpl.bind(null, pvID, rv);
+        }
+    }
+}
+
+__ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["5d6d1b31-b869-4d24-450f-19ac405dbd4b", "false"], false, ['/detroitchicago/boise.js'], true, false, false, false);
+</script></head><body><div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "../connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1112126845484709";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <script type="text/javascript">
+    function setbg(color) {
+        document.getElementById('formNameLabelTextBefore').style.background = color
+    }
+    </script>
+
+    <script src="../cdn-0.paraphrasing-tool.com/js/ads.js"></script>
+    <script src="../cdn-0.paraphrasing-tool.com/js/adsbygoogle.js"></script>
+    <script src="../cdn-0.paraphrasing-tool.com/js/showads.js"></script>
+    <script src="../cdn-0.paraphrasing-tool.com/js/ad-blocker.js"></script>
+
+    <script>
+        angular.module('siteModule', [])
+            .controller('SiteController', ['$scope', function ($scope) {
+
+                $scope.siteFunctionalityDisabled = false;
+                $scope.warningClass = "hide";
+
+                angular.element(document).ready(function () {
+
+                    var blockingAdsFromAdBlocker = document.getElementById('gBMZSVNXYoQf');
+
+                    //// Check each ad space individually to see if ad was displayed
+                    //var adsense_1_element = document.getElementById('adsense_1');
+                    //var adsense_2_element = document.getElementById('adsense_2');
+                    //var adsense_3_element = document.getElementById('adsense_3');
+                    //var adsense_4_element = document.getElementById('adsense_4');
+                    //if (
+                    //    (adsense_1_element != null && (adsense_1_element.clientHeight < 80 || adsense_1_element.clientWidth < 80)) &&
+                    //    (adsense_2_element != null && (adsense_2_element.clientHeight < 80 || adsense_2_element.clientWidth < 80)) &&
+                    //    (adsense_3_element != null && (adsense_3_element.clientHeight < 80 || adsense_3_element.clientWidth < 80)) &&
+                    //    (adsense_4_element != null && (adsense_4_element.clientHeight < 80 || adsense_4_element.clientWidth < 80))
+                    //) {
+                    //    $scope.whiteListRequestString = $sce.trustAsHtml((whiteListRequestMessage));
+                    //    $scope.siteFunctionalityDisabled = true;
+                    //    $scope.$apply();
+                    //}
+                    if (window.canRunAds_AdsDotJs === undefined ||
+                        window.canRunAds_ShowAdsDotJs === undefined
+                        ||
+                        blockingAdsFromAdBlocker === undefined ||
+                        blockingAdsFromAdBlocker == null) {
+                        $scope.siteFunctionalityDisabled = true;
+                        $scope.warningClass = "";
+                        $scope.$apply();
+                    }
+                });
+            }])
+    </script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '../www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-1694965-20', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+
+
+
+
+    <section id="app">
+
+        <header class="grid-x grid-padding-x">
+            <div class="cell app-logo">
+                <h1><a href="index.html" style="font-size:1.1em">Paraphrasing Tool</a><br/><span>Paraphrase, Reword, Rewrite</span></h1>
+                
+            </div>
+        </header>
+
+        
+
+
+<div ng-app="siteModule" ng-controller="SiteController as siteController">
+
+<form action="https://paraphrasing-tool.com/" method="post"><input name="__RequestVerificationToken" type="hidden" value="SA8NMt2XDeS0WmCZ9TVStwzpo7hQs7hIox4-exgQdBQXmiCYa24B1i21-nmJKoBI5ggJAZqaV_aZ1w-KdMLJ8sQM3M6kv9CafYNbEJf-ras1"/>        <div class="hide" ng-class="warningClass">
+            <div class="grid-x">
+                <div class="text-center medium-6 large-offset-3 cell">
+                    <div class="label alertAdBlock" style="white-space: normal;">
+                        Hello! It looks like you&#39;re using an ad-blocking tool. <br/><br/>
+                        Please white-list this site within the settings of your ad - blocking tool and then refresh the page to enable full website functionality. <br/><br/>
+                        You may also purchase an ad-free subscription from <a target="_blank" href="https://spinbot.com/"> Spinbot.com </a>
+                        which uses the same text rewriting / paraphrasing logic.<br/><br/>
+                        Thanks!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="doc-area" class="grid-container medium-8 medium-offset-2" style="display:flex;">
+
+            <div class="ad">
+                    <!-- Ezoic - ParaphrasingToolMiddleTower - mid_content -->
+                    <div id="ezoic-pub-ad-placeholder-100"> </div>
+                    <!-- End Ezoic - ParaphrasingToolMiddleTower - mid_content -->
+            </div>
+            <div class="grid-x" data-equalizer="" data-equalize-on="medium">
+
+                <input type="hidden" id="formNameLabelCaptchaGuid" name="formNameLabelCaptchaGuid" value="69262302-9726-4522-baa6-08d29d3f26b0"/>
+
+                <div id="inputField" class="small-12 medium-8 cell">
+                    <div class="fieldbg" data-equalizer-watch="">
+                        <label>
+                            <div class="over"><span>Enter Your Text</span></div>
+                            <textarea ng-disabled="siteFunctionalityDisabled" name="formNameLabelTextBefore" id="formNameLabelTextBefore" placeholder="Type or Paste Your Text Here."></textarea>
+                        </label>
+                    </div>
+                    <div class="statusbar grid-x grid-padding-x">
+                        <div class="small-6 cell">
+                            <input name="formNameLabelSpinCapWords" type="checkbox"/><label for="formNameLabelSpinCapWords">Include Capitalized Words</label>
+                            </div>
+                            <div class="small-6 cell charLimit">
+                                <span id="text_before_char_count" name="text_before_char_count" style="color:silver; font-weight:600; font-size:1.25em"><strong>0</strong></span>
+                                of 10,000 Character Limit
+                            </div>
+                            
+
+                        </div>
+                    </div>
+
+
+                    <div class="lowerCols align-center grid-x grid-padding-x">
+                        <div class="middle-content-flex">
+                            <div class="ad">
+                                    <!-- Ezoic - Box_Under_Captcha - incontent_7 -->
+                                    <div id="ezoic-pub-ad-placeholder-122"> </div>
+                                    <!-- End Ezoic - Box_Under_Captcha - incontent_7 -->
+                            </div>
+
+                            <div class="captcha-cta-wrapper">
+                                <div class="medium-8  cell captcha">
+                                    
+                                        <div class="h-captcha" data-sitekey="88a62749-7449-4c1a-81b2-427270fda1d9"></div>
+
+                                    <br/>
+
+                                </div>
+
+
+                                <div class="medium-8  cell cta">
+                                    <input ng-disabled="siteFunctionalityDisabled" type="submit" value="Paraphrase Now!" class="button large"/>
+                                    
+                                    <br/>
+                                    <div class="facebook-cta">
+                                        <p>Was this free tool useful to you?<br/>If so, like and share!</p>
+                                        <div class="fb-like fb_iframe_widget" data-href="https://www.facebook.com/paraphrasingtool/" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=https://paraphrasing-tool.com/like&amp;app_id=1112126845484709&amp;container_width=0&amp;href=https%3A%2F%2Fwww.facebook.com%2Fparaphrasingtool%2F&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=false&amp;size=large"><span style="vertical-align: bottom; width: 174px; height: 28px;"><iframe name="f3770d556c21824" width="1000px" height="1000px" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v2.8/plugins/like.php?action=like&amp;app_id=1112126845484709&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df13c1499e270f7%26domain%3Dparaphrasing-tool.com%26origin%3Dhttps%253A%252F%252Fparaphrasing-tool.com%252Ff1c8c6b27a0a628%26relation%3Dparent.parent&amp;container_width=0&amp;href=https%3A%2F%2Fwww.facebook.com%2Fparaphrasingtool%2F&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=false&amp;size=large" style="border: none; visibility: visible; width: 174px; height: 28px;" class=""></iframe></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="outputResults" class="medium-8 cell unrendered">
+                        <div class="fieldbg" data-equalizer-watch="">
+                            <label>
+                                <div class="over"><span>Paraphrased Result</span></div>
+                                <textarea contenteditable="true" name="formNameLabelTextAfter" id="formNameLabelTextAfter" placeholder="Confirm you are a human then click the &#39;Paraphrase Now!&#39; button."></textarea>
+                            </label>
+                            
+                        </div>
+                        <div class="statusbar grid-x grid-padding-x">
+                            <div class="small-6 cell">
+                                <a onclick="copyText();" class="button">Copy to Clipboard</a>
+                            </div>
+                            <div class="small-6 cell">
+                                <a href="NoMoreAds.html" class="button">Remove Ads &amp; Captcha</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="lowerCols grid-x grid-padding-x">
+
+                <div class="medium-12 cell info">
+                    <div class="ad">
+                        <!-- Ezoic - Box_between_Captcha_and_Go_Button - incontent_6 -->
+                        <div id="ezoic-pub-ad-placeholsder-121"> </div>
+                        <!-- End Ezoic - Box_between_Captcha_and_Go_Button - incontent_6 -->
+                    </div>
+                    <p style="background-color:antiquewhite; font-size:1.5em; padding:5px 5px 5px 10px;">What Does Paraphrasing Tool Do?</p>
+                    <div style="font-size:1.1em">
+                        <p>Paraphrasing-Tool uses intelligent, decision making software to figure out the most appropriate way to reword, or paraphrase, your text. The English language is full of nuance and different shades of meaning, so the software driving this tool must weigh a wide range of factors before deciding on which will be the best way to rephrase your writing. These decisions are made by looking at the context of each word, phrase and sentence. Depending on the context, the software behind this tool might make very different interpretations about what is the best way to rewrite your content.</p>
+                        <p>The end-product is an intelligently written, brand-new piece of writing, with the added benefit of knowing that you just saved a lot of time and energy.</p>
+                    </div>
+                    <p style="background-color:antiquewhite; font-size:1.5em; padding:5px 5px 5px 10px;">Why Use Paraphrasing Tool?</p>
+                    <div style="font-size:1.1em">
+                        <p>Sometimes discovering new ways of stating basically the same message in an intelligent manner can be very difficult. If you are one of the many people who struggle with brainstorming new ways to express an idea that has already been stated, then Paraphrasing-Tool will be a great fit for you.</p>
+                        <p>You can use this free tool to expand the SEO footprint of your blog or any kind of reference website with quality content.</p>
+                        <p>You can use this amazing paraphraser to grease your intellectual gears and push through the difficult brainstorming process that all writers must face.</p>
+                        <p>If a huge creative writing project is staring you in the face, you can use Paraphrasing-Tool to get your mental momentum started and then keep it going all the way through to an amazingly well-written end product.</p>
+                    </div>
+                    <div class="ad">
+                        <!-- Ezoic -  Horizontal_Space_Under_Text_Boxes - incontent_5 -->
+                        <div id="ezoic-pub-ad-placeholder-120"> </div>
+                        <!-- End Ezoic -  Horizontal_Space_Under_Text_Boxes - incontent_5 -->
+                    </div>
+                    <p style="background-color:antiquewhite; font-size:1.5em; padding:5px 5px 5px 10px;">Word Choice Matters!</p>
+                    <div style="font-size:1.1em">
+                        <p>The end result of your writing should sound as intelligent and appealing to your reader as possible.</p>
+                        <p>There should be no doubt that you know what you’re talking about, and the eloquent words that you choose will do a lot to inspire confidence. Bad word choice or failing to understanding the different shades of meaning in English can distract your readers or make them navigate away from your website, or look for something else to read</p>
+                        <p>That&#39;s the last thing you want.</p>
+                        <p>Paraphrasing tool carefully crafts every phrase and sentence to sound as clear, understandable, and intelligent as you would expect from any native English speaker.</p>
+                    </div>
+
+                    <p style="background-color:antiquewhite; font-size:1.5em; padding:5px 5px 5px 10px;">Better Than Your Everyday, Average Thesaurus</p>
+                    <div style="font-size:1.1em">
+                        <p>Paraphrasing Tool is very similar to an online, automated thesaurus, only much more powerful and efficient.</p>
+                        <p>It is more powerful than a standard thesaurus because it takes into account whole phrases, sentences and paragraphs to find new versions of your old text. This is efficient as well because you don&#39;t need to sift through and research each word and phrase individually.</p>
+                        <p>Throughout the writing process, you might use a thesaurus to sift through hundreds of possibilities before finding a suitable replacement for a word or phrase based the context of you word. This paraphraser will accomplish all of this work for you in a matter of seconds. Based on the most likely meaning of your word or phrase, depending on the context, it will suggest a new way to express that word or phrase.</p>
+                    </div>
+
+                    <p style="background-color:antiquewhite; font-size:1.5em; padding:5px 5px 5px 10px;">Jumpstart the Writing Process</p>
+                    <div style="font-size:1.1em">
+                        <p>If you are getting stuck on the initial, creative part of your writing process, then you may utilize Paraphrasing-Tool to jump-start this process. If you already know of a way to express your idea, then this free tool will present you with a new way to state this idea within seconds.</p>
+                        <p>Whether you&#39;re trying to make a good impression in the professional or educational world, creating content for your blog or website, or if you&#39;re out to craft the most masterful essay you&#39;ve ever written, choosing the right words for the right situation makes a huge difference. The best way to hone in on the correct expressions for your particular situation is to experiment with and mull over every possible word combination that you can imagine. In many cases, this creative process is limited as you&#39;re mind can only remember so many different phrases in one sitting. For this reason, Paraphrasing-Tool can be invaluable for stimulating the creative writing process. This online resource will provide a vast array of fresh, new ways of saying the same old statements, sentences and expressions.</p>
+                        <p>Especially if you already have a chunk of text, for example an essay or article, and you need to paraphrase or rewrite this text, then <strong>Paraphrasing-Tool</strong> will most assuredly fulfill all of your needs. You may use this tool to reword portions of text as large as whole essays and paragraphs, or even something as short as a single sentence, phrase or word.</p>
+                    </div>
+
+                    <p style="background-color:antiquewhite; font-size:1.5em; padding:5px 5px 5px 10px;">How Do I Use Paraphrasing Tool?</p>
+                    <div style="font-size:1.1em">
+                        <p>First, type or paste in the text you wish to reword. If you have already looked over your article and are satisfied with the level of spelling and grammar checking that has been done, then enter the correct answer for the captcha challenge (if applicable), then click the &#39;Paraphrase Now!&#39; button. Your rewritten content will appear within seconds in the text box below.</p>
+                        <p>Easy, right?</p>
+                        <p>To make your job even easier, you can also simply hit &#39;Enter&#39; after you have entered the correct captcha answer, assuming that the text you want to paraphrase / rewrite is already entered in the first text box.</p>
+                    </div>
+
+                    <p style="background-color:antiquewhite; font-size:1.5em; padding:5px 5px 5px 10px;">Free, Fast and Easy. Simply the Best.</p>
+                    <div style="font-size:1.1em">
+                        <p>No sign-up, sign-in or any personal information of any kind is required to use this incredibly fast, convenient, free tool.</p>
+                        <p>You will not find another free text rewriting software online that creates better, fresh, unique content than <strong>Paraphrasing-Tool</strong>.</p>
+                    </div>
+
+                    <p style="background-color:antiquewhite; font-size:1.5em; padding:5px 5px 5px 10px;">Final Notes</p>
+                    <div style="font-size:1.1em">
+                        <p>Please note: This content rewriter assumes by default that you do not want to alter Capitalized words since these words are usually proper nouns. If, however, you do wish to also rewrite or &#39;spin&#39; these words, then select the option next to the &#39;Paraphrase Now!&#39; button, which says &#34;Include Capitalized Words.&#34;</p>
+                        <p>Also, there is an ad-free, captcha-free version of this software available as well. <a href="NoMoreAds.html" title="Get Rid of Captcha And Ads">Click here to check it out</a>.</p>
+                    </div>
+
+
+
+                </div>
+            </div>
+<script>
+
+    // update  character count
+    function updateCharsUsed(latestCharCount) {
+        var elementColor = 'limegreen';
+        if (parseInt(latestCharCount) > 10000) {
+            elementColor = 'red';
+        }
+        document.getElementById('text_before_char_count').style.color = elementColor;
+        document.getElementById('text_before_char_count').innerHTML = latestCharCount;
+        }
+
+    function copyText() {
+
+        var textArea = document.getElementById("formNameLabelTextAfter");
+        textArea.select();
+        document.execCommand("copy");
+    }
+    function pasteText() {
+
+        var textArea = document.getElementById("formNameLabelTextBefore");
+        textArea.select();
+        document.execCommand('paste');
+    }
+
+
+    window.onload = function () {
+        updateCharsUsed(document.getElementById('formNameLabelTextBefore').textContent.length);
+        
+    };
+    document.getElementById('formNameLabelTextBefore').onkeyup = function () {
+        updateCharsUsed(this.value.length);
+    };
+    document.getElementById('formNameLabelTextBefore').onchange = function () {
+        updateCharsUsed(this.value.length);
+    };
+
+
+</script>
+</form> 
+
+</div> 
+
+
+
+
+    </section>
+
+    <footer>
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x">
+                <div class="medium-8 cell copyright">
+                    <p>Copyright © 2021 Paraphrasing-tool.com. All rights reserved. Powered by the Spinbot API | 
+                        <a href="NoMoreAds.html">Remove Ads &amp; Captcha</a> | Contact: support[at]spinbot.com</p>
+                </div>
+                <div class="medium-4 cell social">
+                    <a href="https://www.facebook.com/paraphrasingtool" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="../ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../cdn-0.paraphrasing-tool.com/js/vendor/foundation.js"></script>
+    <script src="../cdn-0.paraphrasing-tool.com/js/app.js"></script>
+
+
+<script type='text/javascript' style='display:none;' async>
+__ez.queue.addFile('/detroitchicago/edmonton.webp', '/detroitchicago/edmonton.webp?a=a&cb=1&shcb=34', true, ['/detroitchicago/minneapolis.js'], true, false, false, false);
+__ez.queue.addFile('/porpoiseant/jellyfish.webp', '/porpoiseant/jellyfish.webp?a=a&cb=1&shcb=34', false, [], true, false, false, false);
+</script>
+
+<script>var _audins_dom="paraphrasing_tool_com",_audins_did=25784;__ez.queue.addDelayFunc("audins.js","__ez.script.add", "../go.ezoic.net/detroitchicago/audins23f3.js?cb=195-1");</script><noscript><div style="display:none;"><img src="../pixel.quantserve.com/pixel/p-31iz6hfFutd16013d.gif?labels=Domain.paraphrasing_tool_com,DomainId.25784" border="0" height="1" width="1" alt="Quantcast"/></div></noscript>
+<script type="text/javascript" data-cfasync="false"></script>
+<script>__ez.queue.addFile('tardisrocinante/vitals.js', 'tardisrocinante/vitalsc4a9.js?gcb=1&amp;cb=3', false, ['/detroitchicago/minneapolis.js'], true, false, true, false);</script></body>
+<!-- Mirrored from paraphrasing-tool.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Jun 2021 21:29:39 GMT -->
+</html>

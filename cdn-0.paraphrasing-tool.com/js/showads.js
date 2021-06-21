@@ -1,0 +1,1 @@
+var canRunAds_ShowAdsDotJs=true;

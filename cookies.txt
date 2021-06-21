@@ -1,0 +1,17 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+paraphrasing-tool.com	TRUE	/	FALSE	1999999999	__RequestVerificationToken	cYz3aHFuxlgF9KpBLEo87A7LtHoGpqVGkGG85Kyg88_eYcpjfOsE7I7CWAZFuWe_a5NEcW8cShDRCN683u5RdWts6g0rF-44mDUryAoR8Fg1
+paraphrasing-tool.com	TRUE	/	FALSE	1999999999	ARRAffinity	6392129203c015a43a90330a940331fe5552d103dee423c78453a01852ca10a7
+paraphrasing-tool.com	TRUE	/	FALSE	1999999999	ARRAffinitySameSite	6392129203c015a43a90330a940331fe5552d103dee423c78453a01852ca10a7
+paraphrasing-tool.com	TRUE	/	FALSE	1999999999	SameSite	None
+paraphrasing-tool.com	TRUE	/	FALSE	1999999999	ezoab_25784	mod1
+paraphrasing-tool.com	TRUE	/	FALSE	1999999999	ezoadgid_25784	-1
+paraphrasing-tool.com	TRUE	/	FALSE	1999999999	ezoref_25784	paraphrasing-tool.com
+paraphrasing-tool.com	TRUE	/	FALSE	1999999999	active_template::25784	pub_site.1624310966
+paraphrasing-tool.com	TRUE	/	FALSE	1999999999	lp_25784	https://paraphrasing-tool.com/
+paraphrasing-tool.com	TRUE	/	FALSE	1999999999	ezovuuidtime_25784	1624310967
+paraphrasing-tool.com	TRUE	/	FALSE	1999999999	ezovuuid_25784	178106fe-e6c3-4e23-7d01-7d4d64b6d1dd
+paraphrasing-tool.com	TRUE	/	FALSE	1999999999	ezopvc_25784	1
+paraphrasing-tool.com	TRUE	/	FALSE	1999999999	ezCMPCCS	true
+.quantserve.com	TRUE	/	FALSE	1999999999	mc	60d104c2-dceab-1b3b3-c8d2d
+
